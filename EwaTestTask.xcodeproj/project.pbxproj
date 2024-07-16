@@ -13,6 +13,9 @@
 		424C1DD32C465B18007E1149 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 424C1DD22C465B18007E1149 /* Preview Assets.xcassets */; };
 		424C1DDB2C465B61007E1149 /* PrizeWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C1DDA2C465B61007E1149 /* PrizeWheelView.swift */; };
 		424C1DDD2C465B80007E1149 /* PrizeWheelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C1DDC2C465B80007E1149 /* PrizeWheelViewModel.swift */; };
+		424C1DE92C467926007E1149 /* DebugInterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C1DE82C467926007E1149 /* DebugInterfaceView.swift */; };
+		424C1DEB2C467944007E1149 /* DayCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C1DEA2C467944007E1149 /* DayCounter.swift */; };
+		424C1DEE2C467960007E1149 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C1DED2C467960007E1149 /* BaseButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		424C1DD22C465B18007E1149 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		424C1DDA2C465B61007E1149 /* PrizeWheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizeWheelView.swift; sourceTree = "<group>"; };
 		424C1DDC2C465B80007E1149 /* PrizeWheelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizeWheelViewModel.swift; sourceTree = "<group>"; };
+		424C1DE82C467926007E1149 /* DebugInterfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugInterfaceView.swift; sourceTree = "<group>"; };
+		424C1DEA2C467944007E1149 /* DayCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCounter.swift; sourceTree = "<group>"; };
+		424C1DED2C467960007E1149 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,7 @@
 			children = (
 				424C1DCB2C465B17007E1149 /* EwaTestTaskApp.swift */,
 				424C1DCD2C465B17007E1149 /* ContentView.swift */,
+				424C1DE72C4678FE007E1149 /* DebugInterfaceView */,
 				424C1DD92C465B56007E1149 /* PrizeWheelView */,
 				424C1DCF2C465B18007E1149 /* Assets.xcassets */,
 				424C1DD12C465B18007E1149 /* Preview Content */,
@@ -77,8 +84,26 @@
 			children = (
 				424C1DDA2C465B61007E1149 /* PrizeWheelView.swift */,
 				424C1DDC2C465B80007E1149 /* PrizeWheelViewModel.swift */,
+				424C1DEC2C46794F007E1149 /* Helper */,
 			);
 			path = PrizeWheelView;
+			sourceTree = "<group>";
+		};
+		424C1DE72C4678FE007E1149 /* DebugInterfaceView */ = {
+			isa = PBXGroup;
+			children = (
+				424C1DE82C467926007E1149 /* DebugInterfaceView.swift */,
+				424C1DEA2C467944007E1149 /* DayCounter.swift */,
+			);
+			path = DebugInterfaceView;
+			sourceTree = "<group>";
+		};
+		424C1DEC2C46794F007E1149 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				424C1DED2C467960007E1149 /* BaseButton.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,10 +176,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				424C1DE92C467926007E1149 /* DebugInterfaceView.swift in Sources */,
 				424C1DCE2C465B17007E1149 /* ContentView.swift in Sources */,
 				424C1DCC2C465B17007E1149 /* EwaTestTaskApp.swift in Sources */,
+				424C1DEE2C467960007E1149 /* BaseButton.swift in Sources */,
 				424C1DDB2C465B61007E1149 /* PrizeWheelView.swift in Sources */,
 				424C1DDD2C465B80007E1149 /* PrizeWheelViewModel.swift in Sources */,
+				424C1DEB2C467944007E1149 /* DayCounter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
