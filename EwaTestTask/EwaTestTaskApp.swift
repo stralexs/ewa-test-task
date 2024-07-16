@@ -11,7 +11,7 @@ import SwiftUI
 struct EwaTestTaskApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DebugInterfaceView()
         }
     }
 }

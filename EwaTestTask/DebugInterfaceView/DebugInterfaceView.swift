@@ -18,18 +18,19 @@ struct DebugInterfaceView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Text("День установки: \(dayCounter.dayCount)")
+                Text(Consts.installationDayText + String(dayCounter.dayCount))
                     .font(.largeTitle)
                     .padding()
-                
                 HStack {
-                    BaseButton(text: "Начать следующий день") {
+                    BaseButton(
+                        text: Consts.nextDayButtonText,
+                        disabled: dayCounter.isExceedsDayCount
+                    ) {
                         dayCounter.incrementDayCount()
                         showWheel = true
                     }
-                    .disabled(!(dayCounter.dayCount < 3))
                     
-                    BaseButton(text: "Сброс установки") {
+                    BaseButton(text: Consts.resetButtonText) {
                         dayCounter.reset()
                     }
                 }
@@ -45,6 +46,15 @@ struct DebugInterfaceView: View {
                 }
             }
         }
+    }
+}
+
+// MARK: - Consts
+private extension DebugInterfaceView {
+    enum Consts {
+        static let installationDayText = String(format: "%@ ", "День установки:")
+        static let nextDayButtonText = "Начать следующий день"
+        static let resetButtonText = "Сброс установки"
     }
 }
 

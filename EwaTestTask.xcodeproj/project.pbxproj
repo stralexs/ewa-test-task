@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		424C1DCC2C465B17007E1149 /* EwaTestTaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C1DCB2C465B17007E1149 /* EwaTestTaskApp.swift */; };
-		424C1DCE2C465B17007E1149 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C1DCD2C465B17007E1149 /* ContentView.swift */; };
 		424C1DD02C465B18007E1149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 424C1DCF2C465B18007E1149 /* Assets.xcassets */; };
 		424C1DD32C465B18007E1149 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 424C1DD22C465B18007E1149 /* Preview Assets.xcassets */; };
 		424C1DDB2C465B61007E1149 /* PrizeWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C1DDA2C465B61007E1149 /* PrizeWheelView.swift */; };
@@ -16,12 +15,14 @@
 		424C1DE92C467926007E1149 /* DebugInterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C1DE82C467926007E1149 /* DebugInterfaceView.swift */; };
 		424C1DEB2C467944007E1149 /* DayCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C1DEA2C467944007E1149 /* DayCounter.swift */; };
 		424C1DEE2C467960007E1149 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C1DED2C467960007E1149 /* BaseButton.swift */; };
+		42F3B02E2C46A41400480943 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F3B02D2C46A41400480943 /* Triangle.swift */; };
+		42F3B0302C46A43100480943 /* PrizeSector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F3B02F2C46A43100480943 /* PrizeSector.swift */; };
+		42F3B0322C46A43F00480943 /* PrizeWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F3B0312C46A43F00480943 /* PrizeWheel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		424C1DC82C465B17007E1149 /* EwaTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EwaTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		424C1DCB2C465B17007E1149 /* EwaTestTaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EwaTestTaskApp.swift; sourceTree = "<group>"; };
-		424C1DCD2C465B17007E1149 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		424C1DCF2C465B18007E1149 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		424C1DD22C465B18007E1149 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		424C1DDA2C465B61007E1149 /* PrizeWheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizeWheelView.swift; sourceTree = "<group>"; };
@@ -29,6 +30,9 @@
 		424C1DE82C467926007E1149 /* DebugInterfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugInterfaceView.swift; sourceTree = "<group>"; };
 		424C1DEA2C467944007E1149 /* DayCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCounter.swift; sourceTree = "<group>"; };
 		424C1DED2C467960007E1149 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		42F3B02D2C46A41400480943 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		42F3B02F2C46A43100480943 /* PrizeSector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizeSector.swift; sourceTree = "<group>"; };
+		42F3B0312C46A43F00480943 /* PrizeWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizeWheel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				424C1DCB2C465B17007E1149 /* EwaTestTaskApp.swift */,
-				424C1DCD2C465B17007E1149 /* ContentView.swift */,
 				424C1DE72C4678FE007E1149 /* DebugInterfaceView */,
 				424C1DD92C465B56007E1149 /* PrizeWheelView */,
 				424C1DCF2C465B18007E1149 /* Assets.xcassets */,
@@ -102,6 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				424C1DED2C467960007E1149 /* BaseButton.swift */,
+				42F3B02F2C46A43100480943 /* PrizeSector.swift */,
+				42F3B0312C46A43F00480943 /* PrizeWheel.swift */,
+				42F3B02D2C46A41400480943 /* Triangle.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -177,11 +183,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				424C1DE92C467926007E1149 /* DebugInterfaceView.swift in Sources */,
-				424C1DCE2C465B17007E1149 /* ContentView.swift in Sources */,
 				424C1DCC2C465B17007E1149 /* EwaTestTaskApp.swift in Sources */,
+				42F3B0322C46A43F00480943 /* PrizeWheel.swift in Sources */,
 				424C1DEE2C467960007E1149 /* BaseButton.swift in Sources */,
 				424C1DDB2C465B61007E1149 /* PrizeWheelView.swift in Sources */,
 				424C1DDD2C465B80007E1149 /* PrizeWheelViewModel.swift in Sources */,
+				42F3B02E2C46A41400480943 /* Triangle.swift in Sources */,
+				42F3B0302C46A43100480943 /* PrizeSector.swift in Sources */,
 				424C1DEB2C467944007E1149 /* DayCounter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,11 +12,16 @@ struct BaseButton: View {
     
     // MARK: Properties
     private let text: String
+    private let disabled: Bool
     private let action: () -> Void
     
     // MARK: Initializer
-    init(text: String, action: @escaping () -> Void) {
+    init(text: String,
+         disabled: Bool = false,
+         action: @escaping () -> Void
+    ) {
         self.text = text
+        self.disabled = disabled
         self.action = action
     }
     
@@ -36,10 +41,12 @@ struct BaseButton: View {
                     .padding()
             }
         }
+        .disabled(disabled)
+        .opacity(disabled ? 0.5: 1)
     }
 }
 
 // MARK: - Preview
 #Preview {
-    BaseButton(text: "Test", action: {})
+    BaseButton(text: "Test button", action: {})
 }
