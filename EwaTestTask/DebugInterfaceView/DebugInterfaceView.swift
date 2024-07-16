@@ -41,8 +41,9 @@ struct DebugInterfaceView: View {
                 }
                 .hidden()
                 .navigationDestination(isPresented: $showWheel) {
-                    PrizeWheelView(dayCount: dayCounter.dayCount)
+                    PrizeWheelView()
                         .navigationBarBackButtonHidden(true)
+                        .environmentObject(dayCounter)
                 }
             }
         }

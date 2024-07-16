@@ -96,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				424C1DE82C467926007E1149 /* DebugInterfaceView.swift */,
-				424C1DEA2C467944007E1149 /* DayCounter.swift */,
+				42F3B0332C46A61700480943 /* Helper */,
 			);
 			path = DebugInterfaceView;
 			sourceTree = "<group>";
@@ -104,10 +104,18 @@
 		424C1DEC2C46794F007E1149 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				424C1DED2C467960007E1149 /* BaseButton.swift */,
 				42F3B02F2C46A43100480943 /* PrizeSector.swift */,
 				42F3B0312C46A43F00480943 /* PrizeWheel.swift */,
 				42F3B02D2C46A41400480943 /* Triangle.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		42F3B0332C46A61700480943 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				424C1DEA2C467944007E1149 /* DayCounter.swift */,
+				424C1DED2C467960007E1149 /* BaseButton.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";

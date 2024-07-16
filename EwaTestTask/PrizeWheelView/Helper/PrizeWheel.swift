@@ -11,7 +11,7 @@ import SwiftUI
 struct PrizeWheel: View {
     
     // MARK: Properties
-    let prizes: [String]
+    private let prizes: [String]
     
     // MARK: Initializer
     init(prizes: [String]) {
@@ -24,7 +24,19 @@ struct PrizeWheel: View {
             ForEach(0..<prizes.count, id: \.self) { index in
                 PrizeSector(prize: prizes[index], index: index, total: prizes.count)
             }
-            .rotationEffect(Angle(degrees: 18))
+            .rotationEffect(Angle(degrees: Consts.additionalRotation))
         }
     }
+}
+
+// MARK: - Consts
+private extension PrizeWheel {
+    enum Consts {
+        static let additionalRotation: Double = 90
+    }
+}
+
+// MARK: - Preview
+#Preview {
+    PrizeWheel(prizes: ["\u{1F525}", "\u{1F525}", "\u{1F525}", "\u{1F525}", "\u{1F525}"])
 }

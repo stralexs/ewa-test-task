@@ -11,9 +11,9 @@ import SwiftUI
 struct PrizeSector: View {
     
     // MARK: Properties
-    let prize: String
-    let index: Int
-    let total: Int
+    private let prize: String
+    private let index: Int
+    private let total: Int
     
     // MARK: Initializer
     init(
@@ -32,9 +32,9 @@ struct PrizeSector: View {
             let rect = proxy.frame(in: .local)
             let center = CGPoint(x: rect.midX, y: rect.midY)
             let radius = min(rect.width, rect.height) / 2
-            let startAngle = Angle(degrees: (Double(index) / Double(total)) * 360.0)
-            let endAngle = Angle(degrees: (Double(index + 1) / Double(total)) * 360.0)
-            let midAngle = Angle(degrees: (Double(index) / Double(total)) * 360.0 + 180 / Double(total))
+            let startAngle = Angle(degrees: (Double(index) / Double(total)) * Consts.fullCircleDegree)
+            let endAngle = Angle(degrees: (Double(index + 1) / Double(total)) * Consts.fullCircleDegree)
+            let midAngle = Angle(degrees: (Double(index) / Double(total)) * Consts.fullCircleDegree + Consts.halfCircleDegree / Double(total))
             let colorOpacity = 1.0 / Double(total) * Double(index + 1)
 
             ZStack {
@@ -42,27 +42,41 @@ struct PrizeSector: View {
                     path.move(to: center)
                     path.addArc(center: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
                 }
-                .fill(Color.cyan.opacity(colorOpacity))
+                .fill(.cyan.opacity(colorOpacity))
                 .overlay(
                     Path { path in
                         path.move(to: center)
                         path.addArc(center: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
+                        path.closeSubpath() 
                     }
-                    .stroke(Color.black, lineWidth: 2)
+                    .stroke(.black, lineWidth: 2)
                 )
 
                 Text(prize)
                     .rotationEffect(midAngle)
                     .position(
-                        x: rect.midX + radius * 0.6 * cos(CGFloat(midAngle.radians)),
-                        y: rect.midY + radius * 0.6 * sin(CGFloat(midAngle.radians))
+                        x: rect.midX + radius * Consts.textPosition * cos(CGFloat(midAngle.radians)),
+                        y: rect.midY + radius * Consts.textPosition * sin(CGFloat(midAngle.radians))
                     )
             }
         }
     }
 }
 
+// MARK: - Consts
+private extension PrizeSector {
+    enum Consts {
+        static let fullCircleDegree: Double = 360
+        static let halfCircleDegree: Double = 180
+        static let textPosition: CGFloat = 0.6
+    }
+}
+
 // MARK: - Preview
 #Preview {
-    PrizeSector(prize: "\u{1F525}", index: 0, total: 4)
+    VStack {
+        PrizeSector(prize: "\u{1F525}", index: 0, total: 3)
+        PrizeSector(prize: "\u{1F525}", index: 1, total: 3)
+        PrizeSector(prize: "\u{1F525}", index: 2, total: 3)
+    }
 }

@@ -31,9 +31,9 @@ struct BaseButton: View {
             action()
         }) {
             ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.cyan)
-                    .frame(width: 180, height: 60)
+                RoundedRectangle(cornerRadius: Consts.rectangleCornerRadius)
+                    .fill(.cyan)
+                    .frame(width: Consts.rectangleWidth, height: Consts.rectangleHeight)
                 Text(text)
                     .foregroundStyle(.black)
                     .lineLimit(nil)
@@ -42,7 +42,18 @@ struct BaseButton: View {
             }
         }
         .disabled(disabled)
-        .opacity(disabled ? 0.5: 1)
+        .opacity(disabled ? Consts.halfOpacity : Consts.fullOpacity)
+    }
+}
+
+// MARK: - Consts
+private extension BaseButton {
+    enum Consts {
+        static let rectangleCornerRadius: CGFloat = 10
+        static let rectangleWidth: CGFloat = 160
+        static let rectangleHeight: CGFloat = 60
+        static let fullOpacity: CGFloat = 1
+        static let halfOpacity: CGFloat = 0.5
     }
 }
 
