@@ -49,7 +49,7 @@ struct PrizeSector: View {
                         path.addArc(center: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
                         path.closeSubpath()
                     }
-                    .stroke(Color.black, lineWidth: 2)
+                        .stroke(Color.black, lineWidth: Consts.strokeLineWidth)
                 )
                 
                 Text(prize.name)
@@ -67,6 +67,7 @@ struct PrizeSector: View {
 private extension PrizeSector {
     enum Consts {
         static let textPosition: CGFloat = 0.6
+        static let strokeLineWidth: CGFloat = 2
     }
 }
 

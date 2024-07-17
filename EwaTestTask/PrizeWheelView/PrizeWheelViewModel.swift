@@ -25,11 +25,11 @@ final class PrizeWheelViewModel: ObservableObject {
         let index: Int
         switch day {
         case 1:
-            index = prizes.firstIndex(where: { $0.name == "\u{2764}\u{FE0F}" }) ?? 0
+            index = 0
         case 2:
-            index = prizes.firstIndex(where: { $0.name == "\u{1F525}" }) ?? 0
+            index = 1
         case 3:
-            index = prizes.firstIndex(where: { $0.name == "\u{1F60E}" && $0.isRare }) ?? 0
+            index = 4
         default:
             index = 0
         }

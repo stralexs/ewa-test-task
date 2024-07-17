@@ -12,17 +12,17 @@ struct BaseButton: View {
     
     // MARK: Properties
     private let text: String
-    private let disabled: Bool
+    private let isDisabled: Bool
     private let action: () -> Void
     
     // MARK: Initializer
     init(
         text: String,
-        disabled: Bool = false,
+        isDisabled: Bool = false,
         action: @escaping () -> Void
     ) {
         self.text = text
-        self.disabled = disabled
+        self.isDisabled = isDisabled
         self.action = action
     }
     
@@ -42,8 +42,8 @@ struct BaseButton: View {
                     .padding()
             }
         }
-        .disabled(disabled)
-        .opacity(disabled ? Consts.halfOpacity : Consts.fullOpacity)
+        .disabled(isDisabled)
+        .opacity(isDisabled ? Consts.halfOpacity : Consts.fullOpacity)
     }
 }
 

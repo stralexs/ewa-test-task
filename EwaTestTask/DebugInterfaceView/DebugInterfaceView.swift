@@ -11,8 +11,8 @@ import SwiftUI
 struct DebugInterfaceView: View {
     
     // MARK: Properties
-    @ObservedObject var dayCounter = DayCounter()
-    @State private var showWheel = false
+    @ObservedObject private var dayCounter = DayCounter()
+    @State private var isWheelShown = false
 
     // MARK: Body
     var body: some View {
@@ -21,16 +21,16 @@ struct DebugInterfaceView: View {
                 Text(Consts.installationDayText + String(dayCounter.dayCount))
                     .font(.largeTitle)
                 HStack {
-                    NavigationLink(value: showWheel) {
+                    NavigationLink(value: isWheelShown) {
                         BaseButton(
                             text: Consts.nextDayButtonText,
-                            disabled: dayCounter.isExceedsDayCount
+                            isDisabled: dayCounter.isExceedsDayCount
                         ) {
                             dayCounter.incrementDayCount()
-                            showWheel = true
+                            isWheelShown = true
                         }
                     }
-                    .navigationDestination(isPresented: $showWheel) {
+                    .navigationDestination(isPresented: $isWheelShown) {
                         PrizeWheelView()
                             .navigationBarBackButtonHidden(true)
                             .environmentObject(dayCounter)

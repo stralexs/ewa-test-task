@@ -16,10 +16,9 @@ final class DayCounter: ObservableObject {
     
     // MARK: Methods
     func incrementDayCount() {
-        if dayCount < 3 {
-            dayCount += 1
-            if dayCount == 3 { isExceedsDayCount = true }
-        }
+        guard dayCount < 3 else { return }
+        dayCount += 1
+        isExceedsDayCount = dayCount == 3
     }
 
     func reset() {

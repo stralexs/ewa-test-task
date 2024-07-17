@@ -13,11 +13,11 @@ struct PrizeWheelView: View {
     // MARK: Properties
     @ObservedObject private var viewModel = PrizeWheelViewModel()
     @EnvironmentObject private var dayCounter: DayCounter
-    @Environment(\.dismiss) var dismiss
-    @State private var rotation = 0.0
-    @State private var isDiscardedTopPrize = false
+    @Environment(\.dismiss) private var dismiss
+    @State private var rotation: Double = .zero
     @State private var isSpinning = true
     @State private var isTappedToSpin = false
+    @State private var isDiscardedTopPrize = false
 
     // MARK: Body
     var body: some View {
@@ -28,10 +28,10 @@ struct PrizeWheelView: View {
                     .opacity(isTappedToSpin ? .zero : 1)
                 VStack(spacing: Consts.Layouts.buttonsStackSpacing) {
                     reclaimPrizeButton
-                    .opacity(isSpinning ? .zero : 1)
+                        .opacity(isSpinning ? .zero : 1)
                     
-                    refusePrizeButton
-                    .opacity(isSpinning ? .zero : 1)
+                    discardPrizeButton
+                        .opacity(isSpinning ? .zero : 1)
                 }
             }
         }
@@ -105,7 +105,7 @@ private extension PrizeWheelView {
         }
     }
     
-    var refusePrizeButton: some View {
+    var discardPrizeButton: some View {
         Button(Consts.Texts.refuseButtonText) {
             if dayCounter.isExceedsDayCount {
                 isDiscardedTopPrize = true
