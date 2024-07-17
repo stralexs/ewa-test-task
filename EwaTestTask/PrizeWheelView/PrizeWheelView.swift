@@ -14,8 +14,8 @@ struct PrizeWheelView: View {
     @ObservedObject private var viewModel = PrizeWheelViewModel()
     @EnvironmentObject private var dayCounter: DayCounter
     @Environment(\.dismiss) var dismiss
-    @State private var showAlert = false
     @State private var rotation = 0.0
+    @State private var isDiscardedTopPrize = false
     @State private var isSpinning = true
     @State private var isTappedToSpin = false
 
@@ -35,17 +35,16 @@ struct PrizeWheelView: View {
                 }
             }
         }
-        .onAppear {
-            viewModel.updateCurrentPrize(dayCount: dayCounter.dayCount)
-        }
-        .alert(isPresented: $showAlert) {
+        .alert(isPresented: $isDiscardedTopPrize) {
             Alert(
                 title: Text(Consts.Texts.alertTitleText),
                 primaryButton: .destructive(Text(Consts.Texts.yesButtonText)) {
                     viewModel.discardPrize()
                     dismiss()
                 },
-                secondaryButton: .cancel(Text(Consts.Texts.cancelButtonText))
+                secondaryButton: .cancel(Text(Consts.Texts.cancelButtonText)) {
+                    isDiscardedTopPrize = false
+                }
             )
         }
     }
@@ -95,7 +94,7 @@ private extension PrizeWheelView {
                         width: Consts.Layouts.reclaimPrizeRectangleWidth,
                         height: Consts.Layouts.reclaimPrizeRectangleHeight)
                 VStack {
-                    Text(viewModel.currentPrize)
+                    Text(viewModel.currentPrize.name)
                         .font(.system(size: Consts.Numbers.reclaimPrizeTextFontSize))
                     Text(Consts.Texts.reclaimPrizeButtonText)
                         .foregroundStyle(.white)
@@ -109,7 +108,7 @@ private extension PrizeWheelView {
     var refusePrizeButton: some View {
         Button(Consts.Texts.refuseButtonText) {
             if dayCounter.isExceedsDayCount {
-                showAlert = true
+                isDiscardedTopPrize = true
             } else {
                 viewModel.discardPrize()
                 dismiss()
@@ -125,10 +124,10 @@ private extension PrizeWheelView {
     func startSpinning() {
         isTappedToSpin = true
         isSpinning = true
-        let fullRotations = Consts.Numbers.fullWhellRotations
-        let prizeRotation = Consts.Numbers.fullCircleDegree / Double(viewModel.prizes.count)
-        let targetRotation = prizeRotation * Double(viewModel.providePrizeIndex(for: dayCounter.dayCount)) + prizeRotation / 2
-        rotation = fullRotations * Consts.Numbers.fullCircleDegree + targetRotation
+        let prizeAngles = viewModel.prizes.map { $0.isRare ? Consts.Numbers.rareAngle : Consts.Numbers.commonAngle }
+        let targetIndex = viewModel.provideSectorIndex(for: dayCounter.dayCount)
+        let targetRotation = prizeAngles[..<targetIndex].reduce(0, +) + prizeAngles[targetIndex] / 2
+        rotation = -(Consts.Numbers.fullWheelRotations * Consts.Numbers.fullCircleDegree + targetRotation)
         DispatchQueue.main.asyncAfter(deadline: .now() + Consts.Numbers.spinningAnimationDuration) {
             withAnimation {
                 isSpinning = false
@@ -166,9 +165,11 @@ private extension PrizeWheelView {
         
         enum Numbers {
             static let spinningAnimationDuration: CGFloat = 4
-            static let fullWhellRotations: Double = 3
+            static let fullWheelRotations: Double = 3
             static let fullCircleDegree: Double = 360
             static let reclaimPrizeTextFontSize: CGFloat = 60
+            static let commonAngle: Double = 80
+            static let rareAngle: Double = 40
         }
     }
 }

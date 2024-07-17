@@ -11,32 +11,30 @@ import Foundation
 final class PrizeWheelViewModel: ObservableObject {
     
     // MARK: Properties
-    @Published private(set) var currentPrize: String = ""
-    let prizes = [
-        "\u{2764}\u{FE0F}",
-        "\u{1F525}",
-        "\u{2B50}\u{FE0F}",
-        "\u{1F44D}",
-        "\u{1F60E}"
+    @Published private(set) var currentPrize: Prize = .init(name: "\u{2764}\u{FE0F}", isRare: false)
+    let prizes: [Prize] = [
+        .init(name: "\u{2764}\u{FE0F}", isRare: false),
+        .init(name: "\u{1F525}", isRare: false),
+        .init(name: "\u{2B50}\u{FE0F}", isRare: false),
+        .init(name: "\u{1F44D}", isRare: false),
+        .init(name: "\u{1F60E}", isRare: true)
     ]
 
     // MARK: Methods
-    func providePrizeIndex(for day: Int) -> Int {
+    func provideSectorIndex(for day: Int) -> Int {
+        let index: Int
         switch day {
         case 1:
-            return prizes.firstIndex(of: "\u{2764}\u{FE0F}") ?? 0
+            index = prizes.firstIndex(where: { $0.name == "\u{2764}\u{FE0F}" }) ?? 0
         case 2:
-            return prizes.firstIndex(of: "\u{1F525}") ?? 0
+            index = prizes.firstIndex(where: { $0.name == "\u{1F525}" }) ?? 0
         case 3:
-            return prizes.firstIndex(of: "\u{1F60E}") ?? 0
+            index = prizes.firstIndex(where: { $0.name == "\u{1F60E}" && $0.isRare }) ?? 0
         default:
-            return 0
+            index = 0
         }
-    }
-    
-    func updateCurrentPrize(dayCount: Int) {
-        let prizeIndex = min(dayCount - 1, prizes.count - 1)
-        currentPrize = prizes[prizeIndex]
+        currentPrize = prizes[index]
+        return index
     }
     
     func reclaimPrize() {

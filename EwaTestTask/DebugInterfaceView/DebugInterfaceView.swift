@@ -12,7 +12,7 @@ struct DebugInterfaceView: View {
     
     // MARK: Properties
     @ObservedObject var dayCounter = DayCounter()
-    @State private var showWheel: Bool = false
+    @State private var showWheel = false
 
     // MARK: Body
     var body: some View {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		424520012C479EA3006601AB /* Prize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424520002C479EA3006601AB /* Prize.swift */; };
 		424C1DCC2C465B17007E1149 /* EwaTestTaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C1DCB2C465B17007E1149 /* EwaTestTaskApp.swift */; };
 		424C1DD02C465B18007E1149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 424C1DCF2C465B18007E1149 /* Assets.xcassets */; };
 		424C1DD32C465B18007E1149 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 424C1DD22C465B18007E1149 /* Preview Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		424520002C479EA3006601AB /* Prize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prize.swift; sourceTree = "<group>"; };
 		424C1DC82C465B17007E1149 /* EwaTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EwaTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		424C1DCB2C465B17007E1149 /* EwaTestTaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EwaTestTaskApp.swift; sourceTree = "<group>"; };
 		424C1DCF2C465B18007E1149 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42451FFF2C479E83006601AB /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				424C1DEA2C467944007E1149 /* DayCounter.swift */,
+				424520002C479EA3006601AB /* Prize.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		424C1DBF2C465B16007E1149 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +79,7 @@
 				424C1DCB2C465B17007E1149 /* EwaTestTaskApp.swift */,
 				424C1DE72C4678FE007E1149 /* DebugInterfaceView */,
 				424C1DD92C465B56007E1149 /* PrizeWheelView */,
+				42451FFF2C479E83006601AB /* Domain */,
 				424C1DCF2C465B18007E1149 /* Assets.xcassets */,
 				424C1DD12C465B18007E1149 /* Preview Content */,
 			);
@@ -114,7 +126,6 @@
 		42F3B0332C46A61700480943 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				424C1DEA2C467944007E1149 /* DayCounter.swift */,
 				424C1DED2C467960007E1149 /* BaseButton.swift */,
 			);
 			path = Helper;
@@ -196,6 +207,7 @@
 				424C1DEE2C467960007E1149 /* BaseButton.swift in Sources */,
 				424C1DDB2C465B61007E1149 /* PrizeWheelView.swift in Sources */,
 				424C1DDD2C465B80007E1149 /* PrizeWheelViewModel.swift in Sources */,
+				424520012C479EA3006601AB /* Prize.swift in Sources */,
 				42F3B02E2C46A41400480943 /* Triangle.swift in Sources */,
 				42F3B0302C46A43100480943 /* PrizeSector.swift in Sources */,
 				424C1DEB2C467944007E1149 /* DayCounter.swift in Sources */,

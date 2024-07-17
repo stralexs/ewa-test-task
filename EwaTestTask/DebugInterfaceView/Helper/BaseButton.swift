@@ -16,9 +16,10 @@ struct BaseButton: View {
     private let action: () -> Void
     
     // MARK: Initializer
-    init(text: String,
-         disabled: Bool = false,
-         action: @escaping () -> Void
+    init(
+        text: String,
+        disabled: Bool = false,
+        action: @escaping () -> Void
     ) {
         self.text = text
         self.disabled = disabled
