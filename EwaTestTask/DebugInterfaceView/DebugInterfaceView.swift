@@ -20,14 +20,20 @@ struct DebugInterfaceView: View {
             VStack {
                 Text(Consts.installationDayText + String(dayCounter.dayCount))
                     .font(.largeTitle)
-                    .padding()
                 HStack {
-                    BaseButton(
-                        text: Consts.nextDayButtonText,
-                        disabled: dayCounter.isExceedsDayCount
-                    ) {
-                        dayCounter.incrementDayCount()
-                        showWheel = true
+                    NavigationLink(value: showWheel) {
+                        BaseButton(
+                            text: Consts.nextDayButtonText,
+                            disabled: dayCounter.isExceedsDayCount
+                        ) {
+                            dayCounter.incrementDayCount()
+                            showWheel = true
+                        }
+                    }
+                    .navigationDestination(isPresented: $showWheel) {
+                        PrizeWheelView()
+                            .navigationBarBackButtonHidden(true)
+                            .environmentObject(dayCounter)
                     }
                     
                     BaseButton(text: Consts.resetButtonText) {
@@ -35,16 +41,6 @@ struct DebugInterfaceView: View {
                     }
                 }
                 .padding()
-                
-                NavigationLink(value: showWheel) {
-                    EmptyView()
-                }
-                .hidden()
-                .navigationDestination(isPresented: $showWheel) {
-                    PrizeWheelView()
-                        .navigationBarBackButtonHidden(true)
-                        .environmentObject(dayCounter)
-                }
             }
         }
     }

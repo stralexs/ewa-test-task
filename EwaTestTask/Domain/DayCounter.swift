@@ -11,8 +11,8 @@ import Foundation
 final class DayCounter: ObservableObject {
     
     // MARK: Properties
-    @Published var dayCount: Int = 0
-    @Published var isExceedsDayCount = false
+    @Published private(set) var dayCount: Int = 0
+    @Published private(set) var isExceedsDayCount = false
     
     // MARK: Methods
     func incrementDayCount() {
