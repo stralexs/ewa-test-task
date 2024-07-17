@@ -41,13 +41,22 @@ private extension PrizeWheel {
     }
     
     func calculateStartAngle(for index: Int) -> Angle {
-        let start = prizes[..<index].reduce(0) { $0 + ( $1.isRare ? Consts.rareAngle : Consts.commonAngle) }
+        let start = prizes[..<index].reduce(0) { $0 + angle(for: $1) }
         return .degrees(start)
     }
     
     func calculateEndAngle(for index: Int) -> Angle {
-        let end = prizes[...index].reduce(0) { $0 + ( $1.isRare ? Consts.rareAngle : Consts.commonAngle) }
+        let end = prizes[...index].reduce(0) { $0 + angle(for: $1) }
         return .degrees(end)
+    }
+    
+    func angle(for prize: Prize) -> Double {
+        let totalDegrees = 360.0
+        let rareCount = Double(prizes.filter { $0.isRare }.count)
+        let commonCount = Double(prizes.filter { !$0.isRare }.count)
+        let commonAngle = totalDegrees / (commonCount + rareCount / 2)
+        let rareAngle = commonAngle / 2
+        return prize.isRare ? rareAngle : commonAngle
     }
 }
 
@@ -55,8 +64,6 @@ private extension PrizeWheel {
 private extension PrizeWheel {
     enum Consts {
         static let additionalRotation: Double = 90
-        static let rareAngle: Double = 40
-        static let commonAngle: Double = 80
     }
 }
 
