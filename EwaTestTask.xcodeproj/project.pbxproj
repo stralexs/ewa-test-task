@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		424520012C479EA3006601AB /* Prize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424520002C479EA3006601AB /* Prize.swift */; };
+		424520092C47B3D2006601AB /* PrizeWheelViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424520082C47B3D2006601AB /* PrizeWheelViewModelTests.swift */; };
+		424520142C47B64B006601AB /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424520132C47B64B006601AB /* DataBaseManager.swift */; };
+		424520162C47B70A006601AB /* MockDataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424520152C47B70A006601AB /* MockDataBaseManager.swift */; };
+		424520182C47B9A8006601AB /* DayCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424520172C47B9A8006601AB /* DayCounterTests.swift */; };
 		424C1DCC2C465B17007E1149 /* EwaTestTaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C1DCB2C465B17007E1149 /* EwaTestTaskApp.swift */; };
 		424C1DD02C465B18007E1149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 424C1DCF2C465B18007E1149 /* Assets.xcassets */; };
 		424C1DD32C465B18007E1149 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 424C1DD22C465B18007E1149 /* Preview Assets.xcassets */; };
@@ -21,8 +25,23 @@
 		42F3B0322C46A43F00480943 /* PrizeWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F3B0312C46A43F00480943 /* PrizeWheel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4245200A2C47B3D2006601AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 424C1DC02C465B16007E1149 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 424C1DC72C465B17007E1149;
+			remoteInfo = EwaTestTask;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		424520002C479EA3006601AB /* Prize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prize.swift; sourceTree = "<group>"; };
+		424520062C47B3D2006601AB /* EwaTestTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EwaTestTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		424520082C47B3D2006601AB /* PrizeWheelViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizeWheelViewModelTests.swift; sourceTree = "<group>"; };
+		424520132C47B64B006601AB /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
+		424520152C47B70A006601AB /* MockDataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataBaseManager.swift; sourceTree = "<group>"; };
+		424520172C47B9A8006601AB /* DayCounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCounterTests.swift; sourceTree = "<group>"; };
 		424C1DC82C465B17007E1149 /* EwaTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EwaTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		424C1DCB2C465B17007E1149 /* EwaTestTaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EwaTestTaskApp.swift; sourceTree = "<group>"; };
 		424C1DCF2C465B18007E1149 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +57,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		424520032C47B3D2006601AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		424C1DC52C465B17007E1149 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,14 +79,42 @@
 			children = (
 				424C1DEA2C467944007E1149 /* DayCounter.swift */,
 				424520002C479EA3006601AB /* Prize.swift */,
+				424520132C47B64B006601AB /* DataBaseManager.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		424520072C47B3D2006601AB /* EwaTestTaskTests */ = {
+			isa = PBXGroup;
+			children = (
+				4245200F2C47B625006601AB /* TestingDoubles */,
+				424520112C47B62F006601AB /* Tests */,
+			);
+			path = EwaTestTaskTests;
+			sourceTree = "<group>";
+		};
+		4245200F2C47B625006601AB /* TestingDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				424520152C47B70A006601AB /* MockDataBaseManager.swift */,
+			);
+			path = TestingDoubles;
+			sourceTree = "<group>";
+		};
+		424520112C47B62F006601AB /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				424520082C47B3D2006601AB /* PrizeWheelViewModelTests.swift */,
+				424520172C47B9A8006601AB /* DayCounterTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		424C1DBF2C465B16007E1149 = {
 			isa = PBXGroup;
 			children = (
 				424C1DCA2C465B17007E1149 /* EwaTestTask */,
+				424520072C47B3D2006601AB /* EwaTestTaskTests */,
 				424C1DC92C465B17007E1149 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				424C1DC82C465B17007E1149 /* EwaTestTask.app */,
+				424520062C47B3D2006601AB /* EwaTestTaskTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,6 +189,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		424520052C47B3D2006601AB /* EwaTestTaskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4245200C2C47B3D2006601AB /* Build configuration list for PBXNativeTarget "EwaTestTaskTests" */;
+			buildPhases = (
+				424520022C47B3D2006601AB /* Sources */,
+				424520032C47B3D2006601AB /* Frameworks */,
+				424520042C47B3D2006601AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4245200B2C47B3D2006601AB /* PBXTargetDependency */,
+			);
+			name = EwaTestTaskTests;
+			productName = EwaTestTaskTests;
+			productReference = 424520062C47B3D2006601AB /* EwaTestTaskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		424C1DC72C465B17007E1149 /* EwaTestTask */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 424C1DD62C465B18007E1149 /* Build configuration list for PBXNativeTarget "EwaTestTask" */;
@@ -161,6 +234,10 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					424520052C47B3D2006601AB = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 424C1DC72C465B17007E1149;
+					};
 					424C1DC72C465B17007E1149 = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -180,11 +257,19 @@
 			projectRoot = "";
 			targets = (
 				424C1DC72C465B17007E1149 /* EwaTestTask */,
+				424520052C47B3D2006601AB /* EwaTestTaskTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		424520042C47B3D2006601AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		424C1DC62C465B17007E1149 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -197,6 +282,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		424520022C47B3D2006601AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				424520162C47B70A006601AB /* MockDataBaseManager.swift in Sources */,
+				424520092C47B3D2006601AB /* PrizeWheelViewModelTests.swift in Sources */,
+				424520182C47B9A8006601AB /* DayCounterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		424C1DC42C465B17007E1149 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -211,12 +306,59 @@
 				42F3B02E2C46A41400480943 /* Triangle.swift in Sources */,
 				42F3B0302C46A43100480943 /* PrizeSector.swift in Sources */,
 				424C1DEB2C467944007E1149 /* DayCounter.swift in Sources */,
+				424520142C47B64B006601AB /* DataBaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4245200B2C47B3D2006601AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 424C1DC72C465B17007E1149 /* EwaTestTask */;
+			targetProxy = 4245200A2C47B3D2006601AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		4245200D2C47B3D2006601AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5C3RTUTT2M;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "alexander-sivko.EwaTestTaskTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EwaTestTask.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EwaTestTask";
+			};
+			name = Debug;
+		};
+		4245200E2C47B3D2006601AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5C3RTUTT2M;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "alexander-sivko.EwaTestTaskTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EwaTestTask.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EwaTestTask";
+			};
+			name = Release;
+		};
 		424C1DD42C465B18007E1149 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -405,6 +547,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4245200C2C47B3D2006601AB /* Build configuration list for PBXNativeTarget "EwaTestTaskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4245200D2C47B3D2006601AB /* Debug */,
+				4245200E2C47B3D2006601AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		424C1DC32C465B16007E1149 /* Build configuration list for PBXProject "EwaTestTask" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

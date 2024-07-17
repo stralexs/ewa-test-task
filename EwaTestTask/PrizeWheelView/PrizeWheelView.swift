@@ -11,7 +11,7 @@ import SwiftUI
 struct PrizeWheelView: View {
     
     // MARK: Properties
-    @ObservedObject private var viewModel = PrizeWheelViewModel()
+    @ObservedObject private var viewModel = PrizeWheelViewModel(dataBaseManager: DataBaseManager())
     @EnvironmentObject private var dayCounter: DayCounter
     @Environment(\.dismiss) private var dismiss
     @State private var rotation: Double = .zero

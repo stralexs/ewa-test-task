@@ -11,6 +11,7 @@ import Foundation
 final class PrizeWheelViewModel: ObservableObject {
     
     // MARK: Properties
+    private let dataBaseManager: DataBaseManagerLogic
     @Published private(set) var currentPrize: Prize = .init(name: "\u{2764}\u{FE0F}", isRare: false)
     let prizes: [Prize] = [
         .init(name: "\u{2764}\u{FE0F}", isRare: false),
@@ -19,6 +20,11 @@ final class PrizeWheelViewModel: ObservableObject {
         .init(name: "\u{1F44D}", isRare: false),
         .init(name: "\u{1F60E}", isRare: true)
     ]
+    
+    // MARK: Initializer
+    init(dataBaseManager: DataBaseManagerLogic) {
+        self.dataBaseManager = dataBaseManager
+    }
 
     // MARK: Methods
     func provideSectorIndex(for day: Int) -> Int {
@@ -38,11 +44,10 @@ final class PrizeWheelViewModel: ObservableObject {
     }
     
     func reclaimPrize() {
-        // Logic of saving prize to user's statistics
-        // e.g. dataBaseManager.save(currentPrize)
+        dataBaseManager.savePrizeToUserStatistics(currentPrize)
     }
     
     func discardPrize() {
-        // Logic of discarding the prize
+        dataBaseManager.discardPrizeFromUserStatistics(currentPrize)
     }
 }
