@@ -36,7 +36,7 @@ struct BaseButton: View {
                     .fill(.cyan)
                     .frame(width: Consts.rectangleWidth, height: Consts.rectangleHeight)
                 Text(text)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.white)
                     .lineLimit(nil)
                     .multilineTextAlignment(.center)
                     .padding()
